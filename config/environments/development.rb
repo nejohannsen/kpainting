@@ -16,9 +16,9 @@ Rails.application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-    :bucket => 'kpainting',
-    :access_key_id => 'AKIAIPD2ZINSQTVI5A4A',
-    :secret_access_key => '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'
+      :bucket => ENV["AWS_BUCKET"],
+      :access_key_id => ENV["AWS_ACCESS_KEY_ID"],
+      :secret_access_key => ENV["AWS_SECRET_ACCESS_KEY"]
     },
     :url => ':s3_domain_url',
     :path => "/:class/:attachment/:id_partition/:style/:filename"
@@ -35,8 +35,8 @@ Rails.application.configure do
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => "gmail.com",
-      :user_name            => "nicholas.johannsen",
-      :password             => "qfsroowjiubbkjca",
+      :user_name            => ENV["GMAIL_USERNAME"],
+      :password             => ENV["GMAIL_PASSWORD"],
       :authentication       => :login,
       :enable_starttls_auto => true
   }

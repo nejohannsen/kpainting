@@ -35,6 +35,8 @@ gem "paperclip"
 gem 'aws-sdk-v1'
 gem 'aws-sdk', '>= 2.0.34'
 
+gem 'figaro'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

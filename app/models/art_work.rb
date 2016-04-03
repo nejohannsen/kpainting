@@ -6,7 +6,7 @@ class ArtWork < ActiveRecord::Base
                     :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
 
   def s3_credentials
-    {:bucket => "kpainting", :access_key_id => "AKIAIPD2ZINSQTVI5A4A", :secret_access_key => "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"}
+    {:bucket => ENV["AWS_BUCKET"], :access_key_id => ENV["AWS_ACCESS_KEY_ID"], :secret_access_key => ENV["AWS_SECRET_ACCESS_KEY"]}
   end
 
   validates_attachment_content_type :Image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
