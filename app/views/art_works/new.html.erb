@@ -1,0 +1,15 @@
+<h1>ArtWorks#new</h1>
+<p>Find me in app/views/art_works/new.html.erb</p>
+
+<%= simple_form_for @art_work do |f| -%>
+  <%= f.input :Title -%>
+  <%= f.input :Technique -%>
+  <%= f.input :Height -%>
+  <%= f.input :Width -%>
+
+  <%= f.input :Price -%>
+  <%= f.input :Sold -%>
+  <%= f.input :Description -%>
+  <%= f.input :Image -%>
+  <%= f.button :submit -%>
+<%- end -%>

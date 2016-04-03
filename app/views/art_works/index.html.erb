@@ -1,0 +1,16 @@
+<table>
+  <%- @art_works.each do |art|-%>
+    <tr>
+      <td><%=link_to art.Title, art_work_path(art.id)-%></td>
+      <td><%=art.Technique-%></td>
+      <td><%= "#{art.Height}X#{art.Width}" -%></td>
+      <td><%=art.Price-%></td>
+      <td><%=art.Sold ? "Sold" : "" -%></td>
+      <td><%=truncate(art.Description, :length => 20)-%></td>
+      <td><%= image_tag art.Image.url(:thumb)-%></td>
+    </tr>
+  <%-end%>
+</table>
+
+
+

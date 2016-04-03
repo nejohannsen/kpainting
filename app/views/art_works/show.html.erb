@@ -1,0 +1,32 @@
+<table>
+  <tr>
+    <td>Title:</td>
+    <td><%=@art_work.Title-%></td>
+  </tr>
+  <tr>
+    <td>Technique:</td>
+    <td><%=@art_work.Technique-%></td>
+  </tr>
+  <tr>
+    <td>Measurements:</td>
+    <td><%= "#{@art_work.Height}X#{@art_work.Width}" -%></td>
+  </tr>
+  <tr>
+    <td>Price:</td>
+    <td><%=@art_work.Price-%></td>
+  </tr>
+  <tr>
+    <td>Sold?:</td>
+    <td><%=@art_work.Sold ? "Sold" : "" -%></td>
+  </tr>
+  <tr>
+    <td>Description:</td>
+    <td><%=@art_work.Description-%></td>
+  </tr>
+</table>
+<br />
+<br />
+<%= link_to "Full Image", @art_work.Image.url -%>
+<br />
+<br />
+<%= image_tag @art_work.Image.url(:medium) %>
